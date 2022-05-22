@@ -40,6 +40,7 @@ Flags and Variables:
     privileged_policy_patterns: Policies which are obviously privileged based on their name
            deprecated_policies: List deprecated policies if you want to skip them (not recommended when checking policies attached to roles)
                          scope: When checking managed policies, select AWS created (AWS), Customer Managed (Local), or All (All)
+        attached_policies_only: True if you only want to scan attached policies, False if you want it to scan all policies
             skip_service_roles: Skips service roles if set to 1
                    
 Scans the following:
