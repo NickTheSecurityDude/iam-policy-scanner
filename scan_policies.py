@@ -264,7 +264,7 @@ def check_role(role_name,target_services, target_actions, target_action_patterns
 
     # Check for privileged managed policies
     for pattern in privileged_policy_patterns:
-      if pattern in policy_name:
+      if pattern in policy_name and pattern != "ServiceRole":
         try:
           results[policy_name].append({"rule": "Privileged Policy Pattern Found", "policy": policy_name})
         except:
@@ -360,6 +360,7 @@ if __name__ == "__main__":
   # select scope: 'All'|'AWS'|'Local',  Local = customer managed
   scope='Local'
 
+  """
   # Dict for results
   results={}
 
@@ -422,11 +423,32 @@ if __name__ == "__main__":
   # Print the results
   print(Fore.CYAN,"Role Name:",role_name)
   print_policy_results(role_results,2)
-  
+
+  """  
   # Example 3, check all roles
 
   # Set to 1 to skip service roles
   skip_service_roles=1
+
+  # Option A: Intensive Scan
+  # Uses above settings
+
+  # Option B: Single Permission Scan
+  target_services=[]
+  target_actions=["s3:putobject"]
+  #target_action_patterns=[]
+  target_action_patterns=["ec2:modify"]
+  whitelisted_actions=[]
+  privileged_policy_patterns=[]
+  deprecated_policies=[]
+
+  # variables
+  check_not_resource=0
+  check_not_action=0
+  star_resource_only=1
+  skip_if_has_condition=1
+  skip_privileged=1
+  skip_depreacted=1
 
   print("Checking all roles")
 
@@ -455,3 +477,4 @@ if __name__ == "__main__":
   # Print the results
   print(len(all_roles),"results found")
   print_role_results(all_roles)
+
