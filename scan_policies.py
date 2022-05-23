@@ -55,10 +55,13 @@ Scenarios:
 
     Example 2:
         Check policies attached to a single role.
-        Set the variable called "role_name"
+        Set the variable called "role_name".
 
     Example 3:
-        Check policies attached to all roles.
+        Option A:
+            Check policies attached to all roles.
+        Option B:
+            Check all roles for a specific permission.
 
 '''
 
