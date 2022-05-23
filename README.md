@@ -7,6 +7,7 @@ Some recommended use cases are:
 * Scan all your Customer Managed Policies
 * Scan any "attached" AWS Managed Policies
 * Scan policies attached to your roles
+* Scan for a specific action, or action pattern (substring)
 
 To use, install "colorama" if needed:
 ```
