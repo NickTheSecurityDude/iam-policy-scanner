@@ -435,6 +435,7 @@ if __name__ == "__main__":
   # Uses above settings
 
   # Option B: Single Permission Scan
+  """
   target_services=[]
   target_actions=["s3:putobject"]
   #target_action_patterns=[]
@@ -450,6 +451,7 @@ if __name__ == "__main__":
   skip_if_has_condition=1
   skip_privileged=1
   skip_depreacted=1
+  """
 
   print("Checking all roles")
 
