@@ -363,7 +363,6 @@ if __name__ == "__main__":
   # select scope: 'All'|'AWS'|'Local',  Local = customer managed
   scope='Local'
 
-  """
   # Dict for results
   results={}
 
@@ -427,7 +426,6 @@ if __name__ == "__main__":
   print(Fore.CYAN,"Role Name:",role_name)
   print_policy_results(role_results,2)
 
-  """  
   # Example 3, check all roles
 
   # Set to 1 to skip service roles
